@@ -13,6 +13,8 @@
 		E33DF5462982ECF200B675C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33DF5442982ECF200B675C8 /* Main.storyboard */; };
 		E33DF5482982ECF500B675C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E33DF5472982ECF500B675C8 /* Assets.xcassets */; };
 		E33DF54B2982ECF500B675C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33DF5492982ECF500B675C8 /* LaunchScreen.storyboard */; };
+		E33DF5532982EE1800B675C8 /* CGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DF5522982EE1800B675C8 /* CGame.swift */; };
+		E33DF5552982EE5800B675C8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DF5542982EE5800B675C8 /* Card.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		E33DF5472982ECF500B675C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E33DF54A2982ECF500B675C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E33DF54C2982ECF500B675C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E33DF5522982EE1800B675C8 /* CGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGame.swift; sourceTree = "<group>"; };
+		E33DF5542982EE5800B675C8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				E33DF53E2982ECF200B675C8 /* AppDelegate.swift */,
 				E33DF5402982ECF200B675C8 /* SceneDelegate.swift */,
 				E33DF5422982ECF200B675C8 /* ViewController.swift */,
+				E33DF5522982EE1800B675C8 /* CGame.swift */,
+				E33DF5542982EE5800B675C8 /* Card.swift */,
 				E33DF5442982ECF200B675C8 /* Main.storyboard */,
 				E33DF5472982ECF500B675C8 /* Assets.xcassets */,
 				E33DF5492982ECF500B675C8 /* LaunchScreen.storyboard */,
@@ -140,7 +146,9 @@
 			files = (
 				E33DF5432982ECF200B675C8 /* ViewController.swift in Sources */,
 				E33DF53F2982ECF200B675C8 /* AppDelegate.swift in Sources */,
+				E33DF5552982EE5800B675C8 /* Card.swift in Sources */,
 				E33DF5412982ECF200B675C8 /* SceneDelegate.swift in Sources */,
+				E33DF5532982EE1800B675C8 /* CGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +298,7 @@
 				DEVELOPMENT_TEAM = 6XK3NFM9Y7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ConcentrationGame/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -318,6 +327,7 @@
 				DEVELOPMENT_TEAM = 6XK3NFM9Y7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ConcentrationGame/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
