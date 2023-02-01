@@ -8,8 +8,10 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-   private lazy var game = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards )
+ 
+    
+    
+    private lazy var game = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards )
     
     var numberOfPairsOfCards: Int {
         return (buttonCollection.count + 1 ) / 2
@@ -30,18 +32,24 @@ class ViewController: UIViewController {
         }
     }
     
-   // private var emojiCollection = ["🪱","🦆","🦂","🦈","🦍","🐆","🦓","🦖","🐈‍⬛","🐎","🐩","🦫","🦜","🐢"]
-    private var emojiCollection = "🪱🦆🦂🦈🦍🐆🦓🦖🐈‍⬛🐎🐩🦫🦜🐢"
+    private var emojiChoice = [String]()
+    private var cardEmoji = [Card:String]()
+    private var currentThemeIndex = 0
     
-    private var emojiDictionary = [Card:String]()
     
-    private func emojiIdentifier(for card: Card) -> String  {
-        if emojiDictionary[card] == nil {
-            let randomStringIndex = emojiCollection.index(emojiCollection.startIndex, offsetBy: emojiCollection.count.arc4randomExtension)
-            emojiDictionary[card] = String(emojiCollection.remove(at: randomStringIndex))
-        }
-       return emojiDictionary[card] ?? "?"
-    }
+    
+    private let themes = [
+        ThemeModel(name: "Fruits", emoji : ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🫐","🍓","🍈","🍒","🍑","🥭","🍍","🥥","🥝"]),
+        ThemeModel(name: "Faces", emoji: ["😀","😍","😴","😱","🤣","😂","😉","🙄","😬","🤨"]),
+        ThemeModel(name: "Animal", emoji: ["🐶","🐱","🐼","🦊","🦁","🐯","🐨","🐮","🐷","🐵"]),
+        ThemeModel(name: "Summer", emoji: ["🏄🏼‍♂️","🏊🏼‍♀️","☀️","🌈","🌼","🏖","⛱","🏝","🎣","🍦"]),
+        ThemeModel(name: "Insects", emoji:  ["🐝","🐛","🦋","🐌","🪱","🐞","🐜","🪰","🦟","🪳","🪲","🦗","🕷️","🦂"]),
+        ThemeModel(name: "Winter", emoji: ["⛄️","🧣","🌨","❄️","🎿","🏂","⛷","🏒","⛸","🛷"])
+    ]
+    
+    //        "Animal" : [🐭🐹🐰🦊🐻🐼🐻‍❄️🐨🐯🦁🐮🐷],
+    //        "Vehicle": ["🚗🚕🚙🛻🚌🚎🏎️🚓🚑🚒🚐🚚🚛🚜"],
+    //        "Human"  : ["👨‍🦼🚶🧑‍🦯👩‍🦯🧎🧎‍♀️🏃‍♀️👩‍🦽🧑‍🤝‍🧑👭"],
     
     func updateViewFromModel() {
         for index in buttonCollection.indices {
@@ -63,24 +71,58 @@ class ViewController: UIViewController {
             updateTouches()
         }
     }
+    
+    @IBAction func newGame(_ sender: UIButton) {
+        game.resetGame()
+        updateViewFromModel()
+        setTheme()
+        touches = 0
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        updateViewFromModel()
+        setTheme()
+        
+    }
+    
     @IBAction private func buttonAction(_ sender: UIButton) {
         touches += 1
-        if let buttonIndex = buttonCollection.firstIndex(of: sender) {
+        if let buttonIndex = buttonCollection.lastIndex(of: sender) {
             game.chooseCard(at: buttonIndex)
             updateViewFromModel()
         }
     }
     
+
+    private func emojiIdentifier(for card: Card) -> String {
+            //Add the emoji choice to the emoji dictionary
+            if cardEmoji[card] == nil, emojiChoice.count > 0 {
+                let randomStringIndex = getRandomIndex(for: emojiChoice.count)
+                cardEmoji[card] = emojiChoice.remove(at: randomStringIndex)
+            }
+            return cardEmoji[card] ?? "?"
+        }
+    
+    private func setTheme() {
+        
+        var newThemeIndex = getRandomIndex(for: themes.count)
+        
+        while newThemeIndex == currentThemeIndex {
+            newThemeIndex = getRandomIndex(for: themes.count)
+        }
+        
+        currentThemeIndex = newThemeIndex
+        emojiChoice = themes[currentThemeIndex].emoji
+    }
+    
+    private func getRandomIndex(for arrayCount: Int) -> Int {
+        return Int(arc4random_uniform(UInt32(arrayCount)))
+    }
+    
 }
 
-extension Int {
-    var arc4randomExtension: Int {
-        if self > 0 {
-            return Int(arc4random_uniform(UInt32(self)))
-        } else if self < 0 {
-            return  -Int(arc4random_uniform(UInt32(abs(self))))
-        } else {
-            return 0
-        }
-    }
-}
+
+
+
+

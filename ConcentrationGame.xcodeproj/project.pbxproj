@@ -15,6 +15,7 @@
 		E33DF54B2982ECF500B675C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E33DF5492982ECF500B675C8 /* LaunchScreen.storyboard */; };
 		E33DF5532982EE1800B675C8 /* CGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DF5522982EE1800B675C8 /* CGame.swift */; };
 		E33DF5552982EE5800B675C8 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = E33DF5542982EE5800B675C8 /* Card.swift */; };
+		E3F43496298A7F76007662A6 /* emojiThemes.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F43495298A7F76007662A6 /* emojiThemes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		E33DF54C2982ECF500B675C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E33DF5522982EE1800B675C8 /* CGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGame.swift; sourceTree = "<group>"; };
 		E33DF5542982EE5800B675C8 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		E3F43495298A7F76007662A6 /* emojiThemes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = emojiThemes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 			children = (
 				E33DF53E2982ECF200B675C8 /* AppDelegate.swift */,
 				E33DF5402982ECF200B675C8 /* SceneDelegate.swift */,
+				E3F43495298A7F76007662A6 /* emojiThemes.swift */,
 				E33DF5422982ECF200B675C8 /* ViewController.swift */,
 				E33DF5522982EE1800B675C8 /* CGame.swift */,
 				E33DF5542982EE5800B675C8 /* Card.swift */,
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3F43496298A7F76007662A6 /* emojiThemes.swift in Sources */,
 				E33DF5432982ECF200B675C8 /* ViewController.swift in Sources */,
 				E33DF53F2982ECF200B675C8 /* AppDelegate.swift in Sources */,
 				E33DF5552982EE5800B675C8 /* Card.swift in Sources */,

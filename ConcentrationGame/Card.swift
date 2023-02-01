@@ -9,17 +9,21 @@ import Foundation
 
 struct Card: Hashable {
 
-func hash(into hasher: inout Hasher) {
-   hasher.combine(indentifier)
-}
+    var isFaceUp = false
+    var isMatched = false
+    private var indentifier: Int
+    
+//func hash(into hasher: inout Hasher) {
+//   hasher.combine(indentifier)
+//}
+    
+ 
 
-static func ==(lhs: Card, rhs: Card) -> Bool {
+static func == (lhs: Card, rhs: Card) -> Bool {
    return lhs.indentifier == rhs.indentifier
 }
 
-var isFaceUp = false
-var isMatched = false
-private var indentifier: Int
+
 
 private static var indentifierNumber = 0
 
