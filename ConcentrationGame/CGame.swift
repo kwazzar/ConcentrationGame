@@ -50,33 +50,48 @@ struct ConcentrationGame {
         }
     }
     
+    mutating func resetGame() {
+        for index in cards.indices {
+            cards[index].isFaceUp = false
+            cards[index].isMatched = false
+        }
+    }
+    
     init(numberOfPairsOfCards: Int) {
         assert(numberOfPairsOfCards > 0, "ConcentrationGame.init(\(numberOfPairsOfCards): must have at least one pair of cards")
         for _ in 1...numberOfPairsOfCards {
             let card = Card()
             cards += [card,card]
         }
-        cards.shuffle()
+        func shuffle() {
+            var lastCardIndex = cards.count - 1;
+            
+            while lastCardIndex > 0 {
+                let randomIndex = Int(arc4random_uniform(UInt32(lastCardIndex)))
+                lastCardIndex -= 1
+                
+                cards.swapAt(randomIndex, lastCardIndex)
+        }
+        }
+
     }
 }
-
-extension Array {
     
-mutating func shuffle() {
-
-    if count < 2 { return }
+    //    func getRandomIndex(for arrayCount: Int) -> Int {
+    //        if arrayCount > 0 {
+    //            return Int((UInt32(arrayCount)))
+    //        } else if arrayCount < 0 {
+    //            return  Int((UInt32(arrayCount)))
+    //        } else {
+    //            return 0
+    //        }
+    //
+    //    }
+    //}
     
-    for i in indices.dropLast() {
-        let diff = distance(from: i, to: endIndex)
-        let j = index(i, offsetBy: diff.arc4randomExtension)
-        swapAt(i, j)
-}
-}
-}
- 
-extension Collection {
-    
-    var oneAndOnly: Element? {
-        return count == 1 ? first : nil
+    extension Collection {
+        var oneAndOnly: Element? {
+            return count == 1 ? first : nil
+        }
     }
-}
+

@@ -13,24 +13,69 @@
         <scene sceneID="M2V-Wh-l5S">
             <objects>
                 <viewController id="yEE-cJ-56x" customClass="ViewController" customModule="ConcentrationGame" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="XDQ-75-V3L">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="XDQ-75-V3L">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touches: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbD-Bd-5W5">
-                                <rect key="frame" x="126.33333333333333" y="782" width="140.66666666666669" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="Emg-aJ-ctM">
-                                <rect key="frame" x="20" y="59" width="353" height="366"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Emg-aJ-ctM">
+                                <rect key="frame" x="20" y="59" width="353.33333333333331" height="392"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ut8-x6-bMV">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="72"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DE6-HE-wdH">
+                                        <rect key="frame" x="0.0" y="0.0" width="353.33333333333331" height="72"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jO-2p-6IU">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9sg-kB-Enh">
                                                 <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="72"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="buttonAction:" destination="yEE-cJ-56x" eventType="touchUpInside" id="SHO-Fr-IXk"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MeT-52-zvZ">
+                                                <rect key="frame" x="90.333333333333343" y="0.0" width="82.333333333333343" height="72"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="buttonAction:" destination="yEE-cJ-56x" eventType="touchUpInside" id="YOA-py-ddS"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P6h-Jd-EZ9">
+                                                <rect key="frame" x="180.66666666666666" y="0.0" width="82.333333333333343" height="72"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="buttonAction:" destination="yEE-cJ-56x" eventType="touchUpInside" id="ipb-ua-u7R"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WRn-GF-qk0">
+                                                <rect key="frame" x="271" y="0.0" width="82.333333333333314" height="72"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="buttonAction:" destination="yEE-cJ-56x" eventType="touchUpInside" id="kqX-XA-e5b"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ut8-x6-bMV">
+                                        <rect key="frame" x="0.0" y="80" width="353.33333333333331" height="72"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="DOm-Iu-aDu">
+                                                <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="72"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <connections>
+                                                    <action selector="buttonAction:" destination="yEE-cJ-56x" eventType="touchUpInside" id="fY0-xM-xQt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7jO-2p-6IU">
+                                                <rect key="frame" x="90.333333333333343" y="0.0" width="82.333333333333343" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -39,7 +84,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uGu-rJ-6D2">
-                                                <rect key="frame" x="90.333333333333343" y="0.0" width="82.333333333333343" height="72"/>
+                                                <rect key="frame" x="180.66666666666666" y="0.0" width="82.333333333333343" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -48,7 +93,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SiV-q9-YHY">
-                                                <rect key="frame" x="180.66666666666666" y="0.0" width="81.999999999999972" height="72"/>
+                                                <rect key="frame" x="271" y="0.0" width="82.333333333333314" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -56,19 +101,10 @@
                                                     <action selector="buttonAction:" destination="yEE-cJ-56x" eventType="touchUpInside" id="xrl-HR-0XL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V7T-Q0-g9m">
-                                                <rect key="frame" x="270.66666666666669" y="0.0" width="82.333333333333314" height="72"/>
-                                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <connections>
-                                                    <action selector="buttonAction:" destination="yEE-cJ-56x" eventType="touchUpInside" id="TBr-ur-9z7"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DZq-eD-Peo">
-                                        <rect key="frame" x="0.0" y="98" width="353" height="72"/>
+                                        <rect key="frame" x="0.0" y="160" width="353.33333333333331" height="72"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ee6-Zb-JHa">
                                                 <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="72"/>
@@ -89,7 +125,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0b-kX-iFA">
-                                                <rect key="frame" x="180.66666666666666" y="0.0" width="81.999999999999972" height="72"/>
+                                                <rect key="frame" x="180.66666666666666" y="0.0" width="82.333333333333343" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -98,7 +134,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ek-cy-wGd">
-                                                <rect key="frame" x="270.66666666666669" y="0.0" width="82.333333333333314" height="72"/>
+                                                <rect key="frame" x="271" y="0.0" width="82.333333333333314" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -109,7 +145,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="3me-fq-HXL">
-                                        <rect key="frame" x="0.0" y="196" width="353" height="72"/>
+                                        <rect key="frame" x="0.0" y="240" width="353.33333333333331" height="72"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a7-52-tAC">
                                                 <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="72"/>
@@ -130,7 +166,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cvN-lR-Fsp">
-                                                <rect key="frame" x="180.66666666666666" y="0.0" width="81.999999999999972" height="72"/>
+                                                <rect key="frame" x="180.66666666666666" y="0.0" width="82.333333333333343" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -139,7 +175,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iu4-1f-Zls">
-                                                <rect key="frame" x="270.66666666666669" y="0.0" width="82.333333333333314" height="72"/>
+                                                <rect key="frame" x="271" y="0.0" width="82.333333333333314" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -150,7 +186,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ftX-kh-beN">
-                                        <rect key="frame" x="0.0" y="294" width="353" height="72"/>
+                                        <rect key="frame" x="0.0" y="320" width="353.33333333333331" height="72"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HIS-Iv-Tm5">
                                                 <rect key="frame" x="0.0" y="0.0" width="82.333333333333329" height="72"/>
@@ -171,7 +207,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UAb-rt-2x2">
-                                                <rect key="frame" x="180.66666666666666" y="0.0" width="81.999999999999972" height="72"/>
+                                                <rect key="frame" x="180.66666666666666" y="0.0" width="82.333333333333343" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -180,7 +216,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4AA-vV-5CV">
-                                                <rect key="frame" x="270.66666666666669" y="0.0" width="82.333333333333314" height="72"/>
+                                                <rect key="frame" x="271" y="0.0" width="82.333333333333314" height="72"/>
                                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -192,21 +228,45 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="pOD-3f-Ato">
+                                <rect key="frame" x="34" y="770" width="324.66666666666669" height="48"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Touches: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vbD-Bd-5W5">
+                                        <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="48"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tOD-QU-EFu">
+                                        <rect key="frame" x="166.66666666666666" y="0.0" width="157.99999999999997" height="48"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="158" id="HA4-TJ-OIN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="New Game">
+                                            <color key="titleColor" systemColor="systemRedColor"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="newGame:" destination="yEE-cJ-56x" eventType="touchUpInside" id="dlv-oP-3es"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mPi-Xu-bdH"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Emg-aJ-ctM" firstAttribute="leading" secondItem="XDQ-75-V3L" secondAttribute="leading" constant="20" id="KGi-aq-SR2"/>
-                            <constraint firstItem="vbD-Bd-5W5" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Emg-aJ-ctM" secondAttribute="bottom" constant="8" symbolic="YES" id="OJa-lM-VTP"/>
-                            <constraint firstAttribute="bottom" secondItem="vbD-Bd-5W5" secondAttribute="bottom" constant="34" id="RUK-Ut-lrr"/>
-                            <constraint firstAttribute="trailing" secondItem="Emg-aJ-ctM" secondAttribute="trailing" constant="20" id="gfm-5i-fhY"/>
-                            <constraint firstItem="Emg-aJ-ctM" firstAttribute="top" secondItem="mPi-Xu-bdH" secondAttribute="top" id="mFO-B3-3Lf"/>
-                            <constraint firstItem="vbD-Bd-5W5" firstAttribute="centerX" secondItem="mPi-Xu-bdH" secondAttribute="centerX" id="mfh-Sk-2JG"/>
+                            <constraint firstItem="pOD-3f-Ato" firstAttribute="leading" secondItem="mPi-Xu-bdH" secondAttribute="leading" constant="34" id="RBQ-kt-9JL"/>
+                            <constraint firstItem="Emg-aJ-ctM" firstAttribute="top" secondItem="XDQ-75-V3L" secondAttribute="top" constant="59" id="VjJ-Fc-ajF"/>
+                            <constraint firstAttribute="trailing" secondItem="Emg-aJ-ctM" secondAttribute="trailing" constant="20" id="ZwP-EJ-M3E"/>
+                            <constraint firstItem="Emg-aJ-ctM" firstAttribute="leading" secondItem="XDQ-75-V3L" secondAttribute="leading" constant="20" id="eDM-q8-yNy"/>
+                            <constraint firstAttribute="bottom" secondItem="pOD-3f-Ato" secondAttribute="bottom" constant="34" id="niH-L9-pTh"/>
+                            <constraint firstItem="pOD-3f-Ato" firstAttribute="top" relation="lessThanOrEqual" secondItem="Emg-aJ-ctM" secondAttribute="bottom" constant="319" id="tqn-Tc-vlz"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="touchLabel" destination="vbD-Bd-5W5" id="txj-rI-x2y"/>
-                        <outletCollection property="buttonCollection" destination="V7T-Q0-g9m" collectionClass="NSMutableArray" id="jP6-iP-0cJ"/>
                         <outletCollection property="buttonCollection" destination="SiV-q9-YHY" collectionClass="NSMutableArray" id="8X2-wp-96e"/>
                         <outletCollection property="buttonCollection" destination="7jO-2p-6IU" collectionClass="NSMutableArray" id="YQu-PX-ck7"/>
                         <outletCollection property="buttonCollection" destination="uGu-rJ-6D2" collectionClass="NSMutableArray" id="5tZ-FS-pmV"/>
@@ -222,16 +282,24 @@
                         <outletCollection property="buttonCollection" destination="HIS-Iv-Tm5" collectionClass="NSMutableArray" id="57y-jk-A8c"/>
                         <outletCollection property="buttonCollection" destination="UAb-rt-2x2" collectionClass="NSMutableArray" id="vCr-YB-VX1"/>
                         <outletCollection property="buttonCollection" destination="4AA-vV-5CV" collectionClass="NSMutableArray" id="zq5-NL-ODW"/>
+                        <outletCollection property="buttonCollection" destination="DOm-Iu-aDu" collectionClass="NSMutableArray" id="qES-i1-leF"/>
+                        <outletCollection property="buttonCollection" destination="WRn-GF-qk0" collectionClass="NSMutableArray" id="tIA-ta-6av"/>
+                        <outletCollection property="buttonCollection" destination="P6h-Jd-EZ9" collectionClass="NSMutableArray" id="dFT-29-kCs"/>
+                        <outletCollection property="buttonCollection" destination="MeT-52-zvZ" collectionClass="NSMutableArray" id="G7c-0Q-8zM"/>
+                        <outletCollection property="buttonCollection" destination="9sg-kB-Enh" collectionClass="NSMutableArray" id="wSd-Ar-BWN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWf-HV-IOJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1853" y="-3373"/>
+            <point key="canvasLocation" x="-1996.1832061068701" y="-3420.4225352112676"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
