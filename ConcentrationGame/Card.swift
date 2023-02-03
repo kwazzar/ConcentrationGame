@@ -13,9 +13,9 @@ struct Card: Hashable {
     var isMatched = false
     private var indentifier: Int
     
-//func hash(into hasher: inout Hasher) {
-//   hasher.combine(indentifier)
-//}
+func hash(into hasher: inout Hasher) {
+   hasher.combine(indentifier)
+}
     
  
 
