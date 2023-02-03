@@ -9,51 +9,18 @@ import Foundation
 
 struct ConcentrationGame {
     
-   private(set) var cards = [Card]()
+    private(set) var cards = [Card]()
+    private var SpottedCard = [Card]()
     
-   private var indexOfOneAndOnlyFaceUpCard: Int? {
+    
+    private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
-            
-            return  cards.indices.filter { cards[$0].isFaceUp }.oneAndOnly
-//            return faceUpCardIndices.count == 1 ? faceUpCardIndices.first : nil
-            
-//            var foundIndex: Int?
-//            for index in cards.indices {
-//                if cards[index].isFaceUp {
-//                    if foundIndex == nil {
-//                        foundIndex = index
-//                    } else {
-//                        return nil
-//                    }
-//                }
-//            }
-//            return foundIndex
+            return  cards.indices.filter {cards[$0].isFaceUp}.oneAndOnly
         }
-        set {
+        set(newValue) {
             for index in cards.indices {
                 cards[index].isFaceUp = (index == newValue)
             }
-        }
-    }
-    
-    mutating func chooseCard(at index: Int) {
-        if !cards[index].isMatched {
-            if let matchingIndex =  indexOfOneAndOnlyFaceUpCard, matchingIndex != index {
-                if cards[matchingIndex] == cards[index] {
-                    cards[matchingIndex].isMatched = true
-                    cards[index].isMatched = true
-                }
-                cards[index].isFaceUp = true
-            } else {
-                indexOfOneAndOnlyFaceUpCard = index
-            }
-        }
-    }
-    
-    mutating func resetGame() {
-        for index in cards.indices {
-            cards[index].isFaceUp = false
-            cards[index].isMatched = false
         }
     }
     
@@ -63,32 +30,42 @@ struct ConcentrationGame {
             let card = Card()
             cards += [card,card]
         }
-        func shuffle() {
-            var lastCardIndex = cards.count - 1;
+        var lastCardIndex = cards.count;
+        
+        while lastCardIndex > 0 {
+            let randomIndex = Int(arc4random_uniform(UInt32(lastCardIndex)))
+            lastCardIndex -= 1
             
-            while lastCardIndex > 0 {
-                let randomIndex = Int(arc4random_uniform(UInt32(lastCardIndex)))
-                lastCardIndex -= 1
-                
-                cards.swapAt(randomIndex, lastCardIndex)
+            cards.swapAt(randomIndex, lastCardIndex)
         }
+    }
+    
+    mutating func resetGame() {
+        for index in cards.indices {
+            cards[index].isFaceUp = false
+            cards[index].isMatched = false
+            
         }
-
+        SpottedCard.removeAll()
+        
+    }
+    
+    
+    mutating func chooseCard(at index: Int) {
+        if !cards[index].isMatched {
+            if let matchingIndex =  indexOfOneAndOnlyFaceUpCard, matchingIndex != index {
+                if cards[matchingIndex] == cards[index] {
+                    cards[matchingIndex].isMatched = true
+                    cards[index].isMatched = true
+                }
+                cards[index].isFaceUp = true
+                SpottedCard += [cards[index], cards[matchingIndex]]
+            } else {
+                indexOfOneAndOnlyFaceUpCard = index
+            }
+        }
     }
 }
-    
-    //    func getRandomIndex(for arrayCount: Int) -> Int {
-    //        if arrayCount > 0 {
-    //            return Int((UInt32(arrayCount)))
-    //        } else if arrayCount < 0 {
-    //            return  Int((UInt32(arrayCount)))
-    //        } else {
-    //            return 0
-    //        }
-    //
-    //    }
-    //}
-    
     extension Collection {
         var oneAndOnly: Element? {
             return count == 1 ? first : nil

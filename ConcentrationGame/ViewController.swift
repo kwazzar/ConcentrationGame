@@ -11,7 +11,7 @@ class ViewController: UIViewController {
  
     
     
-    private lazy var game = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards )
+    private lazy var game = ConcentrationGame(numberOfPairsOfCards: numberOfPairsOfCards)
     
     var numberOfPairsOfCards: Int {
         return (buttonCollection.count + 1 ) / 2
@@ -40,7 +40,7 @@ class ViewController: UIViewController {
     
     private let themes = [
         ThemeModel(name: "Fruits", emoji : ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🫐","🍓","🍈","🍒","🍑","🥭","🍍","🥥","🥝"]),
-        ThemeModel(name: "Faces", emoji: ["😀","😍","😴","😱","🤣","😂","😉","🙄","😬","🤨"]),
+//        ThemeModel(name: "Faces", emoji: ["😀","😍","😴","😱","🤣","😂","😉","🙄","😬","🤨"]),
         ThemeModel(name: "Animal", emoji: ["🐶","🐱","🐼","🦊","🦁","🐯","🐨","🐮","🐷","🐵"]),
         ThemeModel(name: "Summer", emoji: ["🏄🏼‍♂️","🏊🏼‍♀️","☀️","🌈","🌼","🏖","⛱","🏝","🎣","🍦"]),
         ThemeModel(name: "Insects", emoji:  ["🐝","🐛","🦋","🐌","🪱","🐞","🐜","🪰","🦟","🪳","🪲","🦗","🕷️","🦂"]),
@@ -72,8 +72,12 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBOutlet weak var themeLabel: UILabel!
+    
+    
     @IBAction func newGame(_ sender: UIButton) {
         game.resetGame()
+        cardEmoji.removeAll()
         updateViewFromModel()
         setTheme()
         touches = 0
@@ -84,11 +88,12 @@ class ViewController: UIViewController {
         updateViewFromModel()
         setTheme()
         
+        
     }
     
     @IBAction private func buttonAction(_ sender: UIButton) {
         touches += 1
-        if let buttonIndex = buttonCollection.lastIndex(of: sender) {
+        if let buttonIndex = buttonCollection.firstIndex(of: sender) {
             game.chooseCard(at: buttonIndex)
             updateViewFromModel()
         }
@@ -114,6 +119,7 @@ class ViewController: UIViewController {
         
         currentThemeIndex = newThemeIndex
         emojiChoice = themes[currentThemeIndex].emoji
+        themeLabel.text = themes[currentThemeIndex].name
     }
     
     private func getRandomIndex(for arrayCount: Int) -> Int {
