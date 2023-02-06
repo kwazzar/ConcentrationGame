@@ -17,18 +17,20 @@ class ViewController: UIViewController {
         return (buttonCollection.count + 1 ) / 2
     }
     
-    private func updateTouches() {
-        let attributes: [NSAttributedString.Key:Any] = [
-            .strokeWidth: 5.0,
-            .strokeColor: UIColor.red
-        ]
-        let attributedString = NSAttributedString(string: "Touches: \(touches)", attributes: attributes)
-        touchLabel.attributedText = attributedString
+    private func updateTouches(object: Int) {
+        if object > 0 {
+            let attributes: [NSAttributedString.Key:Any] = [
+                .strokeWidth: 5.0,
+                .strokeColor: UIColor.red
+            ]
+            let attributedString = NSAttributedString(string: "Touches: \(touches)", attributes: attributes)
+            touchLabel.attributedText = attributedString
+        }
     }
-    
     private(set) var touches = 0 {
         didSet{
-            updateTouches()
+            updateTouches(object: touches)
+        
         }
     }
     
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
     
     private let themes = [
         ThemeModel(name: "Fruits", emoji : ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🫐","🍓","🍈","🍒","🍑","🥭","🍍","🥥","🥝"]),
-//        ThemeModel(name: "Faces", emoji: ["😀","😍","😴","😱","🤣","😂","😉","🙄","😬","🤨"]),
+        ThemeModel(name: "Faces", emoji: ["😀","😍","😴","😱","🤣","😂","😉","🙄","😬","🤨"]),
         ThemeModel(name: "Animal", emoji: ["🐶","🐱","🐼","🦊","🦁","🐯","🐨","🐮","🐷","🐵"]),
         ThemeModel(name: "Summer", emoji: ["🏄🏼‍♂️","🏊🏼‍♀️","☀️","🌈","🌼","🏖","⛱","🏝","🎣","🍦"]),
         ThemeModel(name: "Insects", emoji:  ["🐝","🐛","🦋","🐌","🪱","🐞","🐜","🪰","🦟","🪳","🪲","🦗","🕷️","🦂"]),
@@ -52,6 +54,9 @@ class ViewController: UIViewController {
     //        "Human"  : ["👨‍🦼🚶🧑‍🦯👩‍🦯🧎🧎‍♀️🏃‍♀️👩‍🦽🧑‍🤝‍🧑👭"],
     
     func updateViewFromModel() {
+        
+        scoreNumberLabel.text = "\(game.score)"
+        
         for index in buttonCollection.indices {
             let button = buttonCollection[index]
             let card = game.cards[index]
@@ -68,10 +73,13 @@ class ViewController: UIViewController {
     @IBOutlet private var buttonCollection: [UIButton]!
     @IBOutlet private weak var touchLabel: UILabel! {
         didSet {
-            updateTouches()
+            updateTouches(object: touches)
         }
     }
     
+    
+    
+    @IBOutlet weak var scoreNumberLabel: UILabel!
     @IBOutlet weak var themeLabel: UILabel!
     
     

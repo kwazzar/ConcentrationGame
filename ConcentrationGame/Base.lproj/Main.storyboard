@@ -265,22 +265,43 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="cIW-Rk-mMW">
+                                <rect key="frame" x="146" y="646" width="101" height="115.66666666666663"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O7D-8J-KHt">
+                                        <rect key="frame" x="13.333333333333343" y="0.0" width="74.666666666666671" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkC-fk-kFY">
+                                        <rect key="frame" x="0.33333333333334281" y="44.000000000000007" width="100.33333333333333" height="71.666666666666686"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="mPi-Xu-bdH"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemOrangeColor"/>
                         <constraints>
+                            <constraint firstItem="cIW-Rk-mMW" firstAttribute="centerX" secondItem="mPi-Xu-bdH" secondAttribute="centerX" id="Ahq-J0-C9n"/>
                             <constraint firstItem="hvQ-4S-zMo" firstAttribute="leading" secondItem="mPi-Xu-bdH" secondAttribute="leading" constant="1" id="DKq-N1-cRf"/>
                             <constraint firstItem="hvQ-4S-zMo" firstAttribute="centerX" secondItem="XDQ-75-V3L" secondAttribute="centerX" id="NIp-cB-2zV"/>
+                            <constraint firstItem="pOD-3f-Ato" firstAttribute="top" secondItem="cIW-Rk-mMW" secondAttribute="bottom" constant="8" symbolic="YES" id="PFI-xQ-TWf"/>
                             <constraint firstItem="hvQ-4S-zMo" firstAttribute="top" secondItem="btV-TI-Aps" secondAttribute="bottom" constant="13" id="USS-7p-wa2"/>
                             <constraint firstItem="pOD-3f-Ato" firstAttribute="bottom" secondItem="XDQ-75-V3L" secondAttribute="bottom" constant="-34" id="YGG-7C-bGU"/>
                             <constraint firstItem="pOD-3f-Ato" firstAttribute="centerX" secondItem="XDQ-75-V3L" secondAttribute="centerX" id="Ya7-Gc-ekK"/>
                             <constraint firstItem="btV-TI-Aps" firstAttribute="top" secondItem="mPi-Xu-bdH" secondAttribute="top" id="cPe-oY-HaW"/>
                             <constraint firstItem="mPi-Xu-bdH" firstAttribute="trailing" secondItem="btV-TI-Aps" secondAttribute="trailing" id="izr-nb-vIB"/>
+                            <constraint firstItem="cIW-Rk-mMW" firstAttribute="leading" secondItem="mPi-Xu-bdH" secondAttribute="leading" constant="146" id="k3i-KF-VeE"/>
                             <constraint firstItem="pOD-3f-Ato" firstAttribute="leading" secondItem="XDQ-75-V3L" secondAttribute="leading" constant="20" id="kPA-5h-QtF"/>
                             <constraint firstItem="btV-TI-Aps" firstAttribute="leading" secondItem="mPi-Xu-bdH" secondAttribute="leading" id="xZ1-PY-RYH"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="scoreNumberLabel" destination="EkC-fk-kFY" id="nYe-U3-2l9"/>
                         <outlet property="themeLabel" destination="btV-TI-Aps" id="8Ih-Q6-9CV"/>
                         <outlet property="touchLabel" destination="vbD-Bd-5W5" id="txj-rI-x2y"/>
                         <outletCollection property="buttonCollection" destination="fdR-hl-WIG" collectionClass="NSMutableArray" id="ayV-2W-nMv"/>
@@ -307,12 +328,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oWf-HV-IOJ" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-958.01526717557249" y="-3638.0281690140846"/>
+            <point key="canvasLocation" x="-1225" y="-3647"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemOrangeColor">
+            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
