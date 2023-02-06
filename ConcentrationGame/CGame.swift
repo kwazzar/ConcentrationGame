@@ -11,7 +11,9 @@ struct ConcentrationGame {
     
     private(set) var cards = [Card]()
     private var SpottedCard = [Card]()
-    
+    var score = 0
+    private var twoSecondAttemptTime: Date
+    var scoreBonus = false
     
     private var indexOfOneAndOnlyFaceUpCard: Int? {
         get {
@@ -38,9 +40,12 @@ struct ConcentrationGame {
             
             cards.swapAt(randomIndex, lastCardIndex)
         }
+        twoSecondAttemptTime = Date.init()
     }
     
     mutating func resetGame() {
+        score = 0
+        scoreBonus = false
         for index in cards.indices {
             cards[index].isFaceUp = false
             cards[index].isMatched = false
@@ -57,11 +62,31 @@ struct ConcentrationGame {
                 if cards[matchingIndex] == cards[index] {
                     cards[matchingIndex].isMatched = true
                     cards[index].isMatched = true
+                    score += 2
+                    
+                    if twoSecondAttemptTime > Date.init() {
+                        score += 1
+                        scoreBonus = true
+                    } else {
+                        scoreBonus = false
+                    }
+                    
+                } else {
+                    if (SpottedCard.contains(cards[index])) {
+                        score -= 1
+                    }
+                     
+                    if (SpottedCard.contains(cards[matchingIndex])) {
+                        score -= 1
+                    }
                 }
+                
                 cards[index].isFaceUp = true
                 SpottedCard += [cards[index], cards[matchingIndex]]
             } else {
                 indexOfOneAndOnlyFaceUpCard = index
+                scoreBonus = false
+                twoSecondAttemptTime = Date.init().addingTimeInterval(2)
             }
         }
     }
