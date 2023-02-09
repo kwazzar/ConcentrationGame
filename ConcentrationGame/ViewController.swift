@@ -34,6 +34,7 @@ class ViewController: UIViewController {
         }
     }
     
+    private var cardColor = UIColor(red: 1, green: 0.5763723254, blue: 0, alpha: 1)
     private var emojiChoice = [String]()
     private var cardEmoji = [Card:String]()
     private var currentThemeIndex = 0
@@ -41,12 +42,12 @@ class ViewController: UIViewController {
     
     
     private let themes = [
-        ThemeModel(name: "Fruits", emoji : ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🫐","🍓","🍈","🍒","🍑","🥭","🍍","🥥","🥝"]),
-        ThemeModel(name: "Faces", emoji: ["😀","😍","😴","😱","🤣","😂","😉","🙄","😬","🤨"]),
-        ThemeModel(name: "Animal", emoji: ["🐶","🐱","🐼","🦊","🦁","🐯","🐨","🐮","🐷","🐵"]),
-        ThemeModel(name: "Summer", emoji: ["🏄🏼‍♂️","🏊🏼‍♀️","☀️","🌈","🌼","🏖","⛱","🏝","🎣","🍦"]),
-        ThemeModel(name: "Insects", emoji:  ["🐝","🐛","🦋","🐌","🪱","🐞","🐜","🪰","🦟","🪳","🪲","🦗","🕷️","🦂"]),
-        ThemeModel(name: "Winter", emoji: ["⛄️","🧣","🌨","❄️","🎿","🏂","⛷","🏒","⛸","🛷"])
+        ThemeModel(name: "Fruits", emoji : ["🍏","🍎","🍐","🍊","🍋","🍌","🍉","🍇","🫐","🍓","🍈","🍒","🍑","🥭","🍍","🥥","🥝"], colors: [UIColor(red: 1, green: 0.5763723254, blue: 0, alpha: 1), UIColor(red: 0, green: 0, blue: 0, alpha: 1)]),
+        ThemeModel(name: "Faces", emoji: ["😀","😍","😴","😱","🤣","😂","😉","🙄","😬","🤨"], colors: [UIColor(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1), UIColor(red: 0.9999960065, green: 1, blue: 1, alpha: 1) ]),
+        ThemeModel(name: "Animal", emoji: ["🐶","🐱","🐼","🦊","🦁","🐯","🐨","🐮","🐷","🐵"], colors: [UIColor(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1), UIColor(red: 0, green: 0, blue: 0, alpha: 1)]),
+        ThemeModel(name: "Summer", emoji: ["🏄🏼‍♂️","🏊🏼‍♀️","☀️","🌈","🌼","🏖","⛱","🏝","🎣","🍦"], colors: [UIColor(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1), UIColor(red: 0.9764705896, green: 0.850980401, blue: 0.5490196347, alpha: 1)]),
+        ThemeModel(name: "Insects", emoji:  ["🐝","🐛","🦋","🐌","🪱","🐞","🐜","🪰","🦟","🪳","🪲","🦗","🕷️","🦂"], colors: [UIColor(red: 0.9999960065, green: 0.80, blue: 0, alpha: 1),UIColor(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)]),
+        ThemeModel(name: "Winter", emoji: ["⛄️","🧣","🌨","❄️","🎿","🏂","⛷","🏒","⛸","🛷"], colors: [UIColor(red: 0, green: 0.4784313725, blue: 1, alpha: 1), UIColor(red: 0.9999960065, green: 1, blue: 1, alpha: 1)])
     ]
     
     //        "Animal" : [🐭🐹🐰🦊🐻🐼🐻‍❄️🐨🐯🦁🐮🐷],
@@ -56,16 +57,18 @@ class ViewController: UIViewController {
     func updateViewFromModel() {
         
         scoreNumberLabel.text = "\(game.score)"
+        scoreNumberLabel.textColor = cardColor
+        scoreTitle.textColor = cardColor
         
         for index in buttonCollection.indices {
             let button = buttonCollection[index]
             let card = game.cards[index]
             if card.isFaceUp {
                 button.setTitle(emojiIdentifier(for: card), for: .normal)
-                button.backgroundColor = UIColor.white
+                button.backgroundColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
             } else {
                 button.setTitle("", for: .normal)
-                button.backgroundColor = card.isMatched ? .black : .blue
+                button.backgroundColor = card.isMatched ? UIColor(red: 1, green: 0.5763723254, blue: 0, alpha: 0) : cardColor
             }
         }
     }
@@ -78,6 +81,7 @@ class ViewController: UIViewController {
     }
     
     
+    @IBOutlet weak var scoreTitle: UILabel!
     
     @IBOutlet weak var scoreNumberLabel: UILabel!
     @IBOutlet weak var themeLabel: UILabel!
@@ -127,7 +131,11 @@ class ViewController: UIViewController {
         
         currentThemeIndex = newThemeIndex
         emojiChoice = themes[currentThemeIndex].emoji
+        cardColor = themes[currentThemeIndex].colors[0]
         themeLabel.text = themes[currentThemeIndex].name
+        themeLabel.textColor = cardColor
+        view.backgroundColor = themes[currentThemeIndex].colors[1]
+        
     }
     
     private func getRandomIndex(for arrayCount: Int) -> Int {
@@ -135,7 +143,6 @@ class ViewController: UIViewController {
     }
     
 }
-
 
 
 

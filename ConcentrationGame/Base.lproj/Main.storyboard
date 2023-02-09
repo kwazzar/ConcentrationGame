@@ -302,6 +302,7 @@
                     </view>
                     <connections>
                         <outlet property="scoreNumberLabel" destination="EkC-fk-kFY" id="nYe-U3-2l9"/>
+                        <outlet property="scoreTitle" destination="O7D-8J-KHt" id="MgA-ZE-pvM"/>
                         <outlet property="themeLabel" destination="btV-TI-Aps" id="8Ih-Q6-9CV"/>
                         <outlet property="touchLabel" destination="vbD-Bd-5W5" id="txj-rI-x2y"/>
                         <outletCollection property="buttonCollection" destination="fdR-hl-WIG" collectionClass="NSMutableArray" id="ayV-2W-nMv"/>

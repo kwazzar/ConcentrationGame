@@ -11,9 +11,11 @@ import UIKit
 struct ThemeModel {
     var emoji: [String]
     var name: String
+    var colors: [UIColor]
     
-    init(name: String, emoji: [String] ) {
+    init(name: String, emoji: [String], colors: [UIColor] ) {
         self.emoji = emoji
+        self.colors = colors
         self.name = emoji[0]+name.capitalized+emoji[1]
     }
 }
